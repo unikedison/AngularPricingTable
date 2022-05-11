@@ -1,0 +1,35 @@
+<section class="pricing py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4" *ngFor="let item of features">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">{{item.type}}</h5>
+                        <h6 class="card-price text-center">{{item.price}}<span class="period">/month</span></h6>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li *ngFor="let f of item.feature; index as i">
+                                <span *ngIf="(item.type == 'FREE' && i<4) || (item.type == 'PLUS' && i<7) || (item.type == 'PRO')">
+                                    <span class="fa-li">
+                                        <i class="fa fa-check "></i>
+                                    </span>
+                                <span>{{f.title}}</span>
+                                </span>
+
+                                <span *ngIf="(item.type == 'FREE' && i>3) || (item.type == 'PLUS' && i>6)">
+                                    <span class="fa-li">
+                                        <i class="fa fa-times text-muted"></i>
+                                    </span>
+                                <span class="text-muted">{{f.title}}</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="d-grid">
+                            <a href="#" class="btn btn-primary text-uppercase">Button</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
